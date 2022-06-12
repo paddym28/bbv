@@ -1,0 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap');
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p, span, a{
+    font-family: Montserrat, sans-serif;
+}
+
+h1,
+h2{
+    font-family: Montserrat, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #138496;
+}
+h3,
+h4,
+h5{
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(8, 8, 8);
+}
+
+/* Navbar */
+.navbar-brand{
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+}
+.carousel-item img{
+    height: 500px;
+    width: 100vw;
+}
+
+
+
+/* Video Section */
+.video-wrapper{
+  padding: 30px;
+}
+.video{
+  font-family: Montserrat,sans-serif;
+}
+.video .slide {
+    border-radius: .5rem;
+    margin-bottom: 4rem;
+    user-select: none;
+}
+
+.video .slide img {
+    height: 20rem;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.video .swiper-pagination-bullet {
+    background-color: #000;
+}
+.video .swiper-pagination-bullet-active {
+    background-color: #129fb4;
+}
+@media only screen and (min-width: 768px) {
+    /* For tablets and laptops: */
+  .carousel-item img{
+      height: 650px;
+  }
+}

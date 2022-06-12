@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap');
+
+*{
+    font-family: Montserrat, sans-serif;
+}
+#header{
+    background: rgb(8, 8, 8);
+    color: white;
+    font-family: Montserrat, sans-serif;
+}
+#branding h1{
+    color:#fff;
+    font-family: Oswald, sans-serif;
+}
+a:link,
+a:visited{
+    color: rgb(13, 13, 13);
+}
+div.breadcrumbs{
+    background: #138496;
+}
+.module h2, .module caption, .inline-group h2{
+    background: #138496;
+}
+.button, input[type=submit], input[type=button], .submit-row input, a.button{
+    background: #138496;
+    color: #fff;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!--  Mythology Page -->
+   <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col" data-aos="fade-down">
+                    <h1 style="font-size: 50px; text-align: center;">Mythology</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 m-3">
+        {% if videos %}
+            {% for video in videos %}
+                <div class="col mb-4" data-aos="fade-down">
+                    <div class="card h-100">
+                        <img src=" {{video.thumb.url}} " alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title"> {{video.name}} </h4>
+                            <a href=" {% url 'author' video.author.id %} ">
+                                <p class="card-text text-info mb-2" style="font-style: italic;"> By {{video.author.name}} </p>
+                            </a>
+                            {% for category in video.category.all %}
+                                <span class="badge alert alert-info"> {{category}} </span>
+                            {% endfor %}
+                            <br>
+                            <a href=" {% url 'video' video.id %} " class="btn btn-info">Watch Now </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12">
+                <p>No Videos</p>
+                <p> Stay Tuned </p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

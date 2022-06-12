@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- About Page Jumbotrom -->
+   <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h1 style="font-size: 50px; color:black;"  data-aos="zoom-in">ABOUT</h1>
+            </div>
+        </div>
+    </div>
+
+<!-- About Page Content -->
+<div class="container ">
+    <div class="row justify-content-around">
+            <div class="col-lg" data-aos="fade-right">
+                <img class="card-img-top img-fluid" src="{% static 'images/about.jpg' %}" alt="Card image cap">
+            </div>
+            <div class="col-lg">
+                <div class="card" style="border: none;">
+                    <div class="card-body" data-aos="fade-down">
+                        <h1 class="card-title">ABOUT</h1>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, doloribus odit? Assumenda, beatae! Quod doloribus nobis porro accusantium nostrum, eligendi maiores facere velit, cum cupiditate itaque molestias possimus consequuntur autem! Sint nesciunt doloremque id quibusdam quod quas iste praesentium? Quis quas sapiente nobis dolorum laudantium nihil incidunt sint earum, obcaecati aspernatur odio! Dignissimos tenetur hic quo, corrupti eveniet error et ad in? Debitis, excepturi eligendi? At officia voluptatibus corrupti sunt architecto iusto unde, placeat nesciunt cupiditate temporibus. Aspernatur, quo obcaecati! Provident est omnis reprehenderit laboriosam temporibus amet ad ab neque veritatis. Aliquid itaque illo eos dolore nulla tempora iusto delectus, odit inventore amet, incidunt alias pariatur iure sequi ad quidem vel accusamus, ipsum id earum modi ipsa! Enim provident et architecto tempore vel sapiente, assumenda dolor voluptate voluptatibus itaque iste. Voluptatum, id. Iure repudiandae, amet obcaecati, accusantium nesciunt reiciendis ut, quam sed est similique quia! Praesentium accusamus voluptatem qui saepe.</p>
+                    </div>
+                </div>  
+            </div>
+    </div>
+</div> 
+
+
+{% endblock content%}

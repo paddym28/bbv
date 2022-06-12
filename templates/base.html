@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BBV</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}" />
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    
+  </head>
+  <body>
+    <!-- Navbar -->
+    {% include 'partials/_navbar.html' %} 
+
+    <!-- Main Content -->
+    {% block content %} 
+    {% endblock %}
+
+    <!-- Footer -->
+    {% include 'partials/_footer.html' %}
+
+    <!-- Jquery -->
+    <script src=" {% static 'js/jquery-3.6.0.min.js' %} "></script>
+
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+
+    <!-- AOS js -->
+    <script src="{% static 'js/aos.js' %}"></script>
+
+    <!-- Swiper JS -->
+    <script src="{% static 'js/swiper.js' %}"></script>
+
+    <!-- Font Awesome Js -->
+    <script src="{% static 'js/all.js' %}"></script>
+
+    <!-- Custom js -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'partials/_alerts.html' %}
+
+<!-- Play Video Page -->
+<div class="col-md col-lg-9 p-3 mx-auto" data-aos="fade-down" >
+        <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/{{video.video_id}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="{{video.name}}" ></iframe>
+        </div>
+        <div>
+                <div class="row justify-content-between ">
+                    <h1 class="ml-3" style="color:#000;" > {{video.name}} </h1> 
+                    <form action="{% url 'play' video.id  %}" method="POST" style="cursor:pointer; " >
+                        {% csrf_token %}
+                        <button type="submit" class="btn ml-2" > Add to Watchlist  <i class="fa-solid fa-circle-plus ml-3"></i>
+                        </button>
+                    </form>
+                </div>
+            <a href=" {% url 'author' video.author.id %}">
+                <strong>
+                    <p class="card-text mb-2" style="color: #000;font-style:italic; "> By {{video.author.name}} </p>
+                </strong>
+            </a>
+            <p> {{video.desciption}} </p>
+        </div>
+</div>
+{% endblock %}

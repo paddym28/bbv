@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Register Page -->
+<div class="container mt-2" id="register" data-aos="fade-down">
+    <div class="row  justify-content-center ">
+            <div class="col-md">
+                <img src=" {% static 'images/login.svg' %} " alt="" class="img-fluid  h-100" >
+            </div>
+            <div class="col-md">
+                <div class="card " style="border: none; font-family: Montserrat, sans-serif;  " >    
+                    <div class="card-body">
+                        <!-- Alerts -->
+                        {% include 'partials/_alerts.html' %}
+                        <h1 class="card-title mt-3 mb-4"> Create An  <span style="color: #000; font-family: Oswald, sans-serif;"> ACCOUNT </span> </h1>
+                        <p> Sign Up to explore </p>
+                        <form action=" {% url 'register' %} "  method="POST">
+                            {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="#firstname">First Name</label><br>
+                                    <input class="form-control" type="text" name="first_name" id="firstname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="#lastname">Last Name</label><br>
+                                    <input class="form-control" type="text" name="last_name" id="lastname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="#username">Username</label><br>
+                                    <input class="form-control" type="text" name="username" id="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="#email">Email</label><br>
+                                    <input class="form-control" type="email" name="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="#password">Password</label><br>
+                                    <input class="form-control" type="password" name="password" id="password" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="#password2">Confirm Password</label><br>
+                                    <input class="form-control" type="password" name="password2" id="password2" required >
+                                </div>
+                                <input type="submit" class="btn btn-info mb-3"  value="Sign Up" />
+                            <br>
+                            <p> ALREADY HAVE AN ACCOUNT? <a href=" {% url 'login' %} ">SIGN IN</a> </p>
+                        </form>      
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

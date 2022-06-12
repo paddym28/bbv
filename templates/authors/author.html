@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- MAIN SECTION -->
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+
+        <!-- Author's Main Details -->
+        <div class="col-lg  col-lg-4" data-aos="fade-right">
+            <div class="card mb-2" style="border: none;">
+                <img src="{{author.photo.url}} " class="card-img-top img-fluid" alt="..." >
+                <div class="card-body">
+                    <h3 class="card-title">  {{author.name}} </h3>
+                    <p style="font-size: 18px;" class="card-text"> {{author.email}} </p>
+                    <div class="d-flex ">
+                        {% if author.social_twitter %}
+                                <a title="Twitter" href="{{author.social_twitter}}" target="_blank" class="mr-2" style="font-size: 20px; color:#000;">
+                                   <i class="fa-brands fa-twitter"></i>
+                                </a>
+                        {% endif %}
+                        {% if author.social_youtube %}
+                                <a title="Personal Youtube Channel" href="{{author.social_youtube}}" target="_blank" class="mr-2" style="font-size: 20px; color:#000;">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg col-lg-8" data-aos="fade-down">
+            <!-- About Author -->
+            <div class="card mb-2" style="border: none;">
+                <div class="card-body">
+                    <h2 class="card-title mb-3" style="color: #000; text-align: center;"> About Me </h2>
+                    <p style="font-size: 18px;" class="card-text">
+                        {{author.bio}}
+                    </p>
+                </div>
+            </div>
+            <!-- Uploaded Video of Author -->
+            <div class="card mb-2" style="border: none;">
+                <div class="card-body">
+                    <h2 class="card-title mb-4" style="color: #000; text-align: center;"> Uploaded Videos </h2>
+                    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 m-2">
+                        {% for video in author.video_set.all %}
+                            <div class="col mb-4">
+                                <div class="card h-100">
+                                    <img src=" {{video.thumb.url}} " class="card-img-top"  alt="...">
+                                    <div class="card-body">
+                                        <h4 class="card-title"> {{video.name}} </h4>
+                                        <p class="card-text"> {{video.date_created}} </p>
+                                        {%for i in video.category.all %}
+                                            <span class="badge alert alert-info"> {{i}} </span>
+                                        {% endfor %}
+                                        <br>
+                                        <a href="{% url 'video' video.id %}" class="btn btn-info" >Watch Now </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- END OF MAIN SECTION -->
+
+{% endblock %}

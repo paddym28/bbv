@@ -1,0 +1,12 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+<!-- Name at the navbar -->
+{% block branding %}
+    <h1 id="head">BBV Admin Area</h1>
+{% endblock %}
+
+<!-- Stylesheet for extra styles -->
+{% block extrastyle %}
+    <link rel="stylesheet" href=" {% static 'css/admin.css' %} ">
+{% endblock %}

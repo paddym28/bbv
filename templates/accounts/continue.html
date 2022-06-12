@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Login Required -->
+<div class="container ">
+    <div class="row m-3 justify-content-around">
+            <div class="col-lg" data-aos="fade-right">
+                <img class="img-fluid" src="{% static 'images/about.jpg' %}" alt="">
+            </div>
+            <div class="col-lg">
+                <div class="card" style="border: none;">
+                    <div class="card-body" data-aos="fade-down">
+                        <h1 > <span style="color: #000; font-family: Oswald, sans-serif;">Login</span> to Continue </h1>
+                        <hr style="height: 2px; background-color:rgb(222, 222, 222); " >
+                        <p style="font-size: 18px;" > DON'T HAVE ACCOUNT? </p>
+                        <a href=" {% url 'register' %}" class="btn btn-secondary mb-3"> Sign Up Now </a>
+                        <p style="font-size: 18px;"> ALREADY HAVE AN ACCOUNT? </p>
+                        <a href=" {% url 'login' %}" class="btn btn-secondary"> Login Now </a>
+                    </div>
+                </div>  
+            </div>
+    </div>
+</div> 
+
+{% endblock %}

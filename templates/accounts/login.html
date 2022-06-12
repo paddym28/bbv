@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Login Page -->
+<div class="container mt-2" id="login" data-aos="fade-down">
+    <div class="row justify-content-center align-items-center" >
+        <div class="col-md">
+            <img src=" {% static 'images/login.svg' %} " alt="" class="img-fluid" >
+        </div>
+        <div class="col-md">
+            <div class="card " style="border: none; font-family: Montserrat, sans-serif;  " >
+                <div class="card-body">
+                    <!-- Alerts -->
+                    {% include 'partials/_alerts.html' %}
+                    <h1 class="card-title mb-4">Login</h1>
+                    <p> Login to explore </p>
+                    <form action=" {% url 'login' %} " method="POST">
+                        {% csrf_token %}
+                        <div class="form-group mb-4">
+                            <label for="username">Enter Your Username</label>
+                            <input id="username" class="form-control" type="text" name="username" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="password">Enter Your Password</label>
+                            <input  id="password" class="form-control" type="password" name="password" required >
+                        </div>
+                        <input class="btn btn-info mb-3" type="submit" value="Sign In" />
+
+                        <br>    
+                        <p> DON'T HAVE AN ACCOUNT ? <a href="{% url 'register' %} "> SIGNUP </a> </p>
+                    </form>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
