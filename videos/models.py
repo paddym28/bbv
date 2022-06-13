@@ -17,7 +17,6 @@ class Video(models.Model):
     desciption = models.TextField(blank=True)
     thumb = models.ImageField(upload_to="photos/%Y/%m/%d")
     video_id = models.CharField(max_length=200)
-    # video_url = models.FileField(upload_to='videos/%Y/%m/%d', null=True)
     category = models.ManyToManyField(Category)
     is_featured = models.BooleanField(default=False)
     is_latest = models.BooleanField(default=False)
